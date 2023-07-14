@@ -32,6 +32,9 @@ db.save_local("REPLACE-WITH-A-NAME")
 ```python
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
+import os
+
+os.environ["OPENAI_API_KEY"] = "REPLACE-WITH-OPENAI-KEY"
 
 embeddings = OpenAIEmbeddings()
 db = FAISS.load_local("REPLACE-WITH-A-NAME", embeddings)
