@@ -39,7 +39,7 @@ db = FAISS.load_local("REPLACE-WITH-A-NAME", embeddings)
 from langchain.chat_models import ChatOpenAI
 
 qa = ConversationalRetrievalChain.from_llm(
-    ChatOpenAI(temperature=0, model="gpt-4"),
+    ChatOpenAI(temperature=0, model="gpt-3.5-turbo"),
     db.as_retriever(),
     condense_question_llm = ChatOpenAI(temperature=0, model='gpt-3.5-turbo'),
     return_source_documents=True
